@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Edrynate Company Limited builds practical solutions across technology, agriculture, healthcare, and consumer goods.">
+  <title>Edrynate Company Limited | Building a Better Future</title>
+  <style>
+    :root {
+      --navy: #062640;
+      --navy2: #0b3652;
+      --green: #10a957;
+      --green-dark: #08783c;
+      --pale: #eaf7ef;
+      --ink: #193247;
+      --muted: #5e7180;
+      --white: #ffffff;
+      --line: #dce7ed;
+      --shadow: 0 12px 32px rgba(6,38,64,.09);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); line-height: 1.6; background: #fff; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: auto; }
+    .topbar { background: var(--navy); color: white; font-size: .82rem; padding: 8px 0; }
+    .topbar .container { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(220,231,237,.85); }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; color: var(--navy); line-height: 1.1; }
+    .brand-mark { display: grid; place-items: center; width: 43px; height: 43px; border-radius: 14px; color: white; background: linear-gradient(135deg, var(--green), #08783c); font-size: 1.45rem; }
+    .brand small { display: block; font-size: .7rem; letter-spacing: .07em; text-transform: uppercase; font-weight: 700; margin-top: 4px; }
+    .navlinks { display: flex; align-items: center; gap: 24px; font-size: .92rem; font-weight: 650; }
+    .navlinks a:hover { color: var(--green-dark); }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 8px; padding: 12px 19px; border-radius: 999px; font-weight: 750; font-size: .92rem; border: 1px solid transparent; transition: transform .2s, background .2s; cursor: pointer; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: white; background: var(--green); box-shadow: 0 8px 20px rgba(16,169,87,.2); }
+    .btn-primary:hover { background: var(--green-dark); }
+    .btn-outline { border-color: rgba(255,255,255,.7); color: white; }
+    .menu-toggle { display: none; background: none; border: 0; font-size: 1.7rem; color: var(--navy); }
+    .hero { color: white; background: linear-gradient(100deg, rgba(4,30,48,.92), rgba(4,30,48,.62) 52%, rgba(4,30,48,.15)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=85') center/cover; min-height: 550px; display: flex; align-items: center; }
+    .hero-content { padding: 80px 0; max-width: 680px; }
+    .eyebrow { color: #6ce5a0; font-size: .78rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    h1 { font-size: clamp(2.5rem, 6vw, 4.6rem); line-height: 1.05; letter-spacing: -.045em; margin: 17px 0; }
+    .hero p { font-size: clamp(1rem, 2vw, 1.2rem); max-width: 590px; color: rgba(255,255,255,.9); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 27px; }
+    .trustline { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 18px; color: rgba(255,255,255,.85); font-size: .85rem; }
+    .trustline span::before { content: "✓"; color: #6ce5a0; font-weight: 900; margin-right: 7px; }
+    section { padding: 82px 0; }
+    .section-head { max-width: 700px; margin-bottom: 34px; }
+    .section-head h2 { color: var(--navy); font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.15; margin: 10px 0 12px; letter-spacing: -.035em; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .section-label { color: var(--green-dark); font-size: .78rem; font-weight: 850; text-transform: uppercase; letter-spacing: .13em; }
+    .business-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .business-card { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: white; box-shadow: 0 4px 18px rgba(6,38,64,.035); transition: transform .2s, box-shadow .2s; }
+    .business-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .business-image { height: 155px; background-size: cover; background-position: center; }
+    .business-body { padding: 22px; }
+    .icon { width: 45px; height: 45px; display: grid; place-items: center; border-radius: 13px; background: var(--pale); color: var(--green-dark); font-size: 1.4rem; margin-bottom: 14px; }
+    .business-body h3 { margin: 0 0 8px; color: var(--navy); font-size: 1.08rem; }
+    .business-body p { margin: 0 0 15px; color: var(--muted); font-size: .91rem; }
+    .text-link { color: var(--green-dark); font-weight: 800; font-size: .9rem; }
+    .about { background: #f5f9fb; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 52px; }
+    .about-visual { min-height: 390px; border-radius: 24px; background: linear-gradient(0deg, rgba(6,38,64,.1), rgba(6,38,64,.05)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85') center/cover; position: relative; }
+    .stat-card { position: absolute; right: -18px; bottom: 24px; background: white; border-radius: 16px; padding: 19px 22px; box-shadow: var(--shadow); max-width: 220px; }
+    .stat-card strong { display: block; color: var(--green-dark); font-size: 1.4rem; }
+    .stat-card span { font-size: .84rem; color: var(--muted); }
+    .about-copy h2 { color: var(--navy); font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.15; letter-spacing: -.035em; margin: 10px 0 16px; }
+    .about-copy p { color: var(--muted); }
+    .check-list { padding: 0; list-style: none; margin: 22px 0 28px; }
+    .check-list li { margin: 10px 0; font-weight: 650; }
+    .check-list li::before { content: "✓"; display: inline-grid; place-items: center; width: 23px; height: 23px; margin-right: 10px; border-radius: 50%; color: var(--green-dark); background: var(--pale); font-size: .8rem; }
+    .impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .impact-item { padding: 24px; border-radius: 16px; background: var(--pale); }
+    .impact-item .icon { background: white; }
+    .impact-item h3 { color: var(--navy); margin: 0 0 7px; font-size: 1rem; }
+    .impact-item p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .values { background: var(--navy); color: white; }
+    .values .section-head h2 { color: white; }
+    .values .section-head p { color: #c7d8e4; }
+    .values-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+    .value { border-left: 2px solid rgba(108,229,160,.7); padding: 5px 0 5px 17px; }
+    .value strong { display: block; color: #8af0b4; margin-bottom: 5px; }
+    .value span { font-size: .88rem; color: #d2e0e9; }
+    .cta { padding: 66px 0; background: linear-gradient(110deg, #eaf7ef, #f7fbfd); }
+    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .cta h2 { color: var(--navy); font-size: clamp(1.8rem, 4vw, 2.7rem); line-height: 1.15; margin: 0 0 10px; }
+    .cta p { color: var(--muted); max-width: 620px; margin: 0; }
+    footer { background: #031b2d; color: #d3e1e9; padding: 46px 0 20px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 32px; padding-bottom: 35px; }
+    footer .brand { color: white; margin-bottom: 15px; }
+    footer p { color: #b4c6d2; font-size: .9rem; max-width: 330px; }
+    footer h4 { color: white; margin: 0 0 14px; }
+    .footer-links { display: grid; gap: 9px; font-size: .9rem; }
+    .footer-links a:hover { color: #8af0b4; }
+    .copyright { border-top: 1px solid rgba(255,255,255,.13); padding-top: 17px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: .8rem; color: #9bb1c0; }
+    @media (max-width: 900px) {
+      .navlinks { gap: 14px; font-size: .85rem; }
+      .business-grid { grid-template-columns: repeat(2, 1fr); }
+      .impact-grid { grid-template-columns: repeat(2, 1fr); }
+      .values-grid { grid-template-columns: repeat(3, 1fr); }
+      .about-grid { gap: 30px; }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 650px) {
+      .container { width: min(100% - 30px, 1120px); }
+      .topbar .container { justify-content: center; text-align: center; }
+      .nav { min-height: 68px; }
+      .menu-toggle { display: block; }
+      .navlinks { display: none; position: absolute; top: 68px; left: 0; right: 0; padding: 18px 20px 24px; background: white; border-bottom: 1px solid var(--line); box-shadow: var(--shadow); flex-direction: column; align-items: stretch; gap: 15px; }
+      .navlinks.open { display: flex; }
+      .navlinks .btn { width: 100%; }
+      .hero { min-height: 570px; background-position: 58% center; }
+      .hero-content { padding: 68px 0; }
+      section { padding: 62px 0; }
+      .business-grid { grid-template-columns: 1fr; }
+      .business-image { height: 190px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-visual { min-height: 290px; }
+      .stat-card { right: 12px; bottom: 12px; }
+      .impact-grid { grid-template-columns: 1fr 1fr; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .cta-inner { align-items: flex-start; flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 26px 18px; }
+      .footer-grid > :first-child { grid-column: 1 / -1; }
+    }
+    @media (max-width: 390px) { .impact-grid, .values-grid, .footer-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="container"><span>Uganda · Building solutions for Africa</span><span>Innovation • Integrity • Sustainable growth</span></div></div>
+  <header>
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Edrynate Company Limited home">
+        <span class="brand-mark">✦</span><span>Edrynate<small>Company Limited</small></span>
+      </a>
+      <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" id="menuToggle">☰</button>
+      <div class="navlinks" id="navLinks">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#businesses">Our Businesses</a><a href="#impact">Impact</a><a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="mailto:hello@edrynate.com">Get in touch ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container"><div class="hero-content">
+        <div class="eyebrow">Innovation · Agriculture · Healthcare · Africa</div>
+        <h1>Building a better future, together.</h1>
+        <p>Edrynate Company Limited is focused on practical business solutions that help people, communities, and enterprises grow.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#businesses">Explore our businesses →</a><a class="btn btn-outline" href="#about">Discover Edrynate</a></div>
+        <div class="trustline"><span>Customer-focused</span><span>Built for local needs</span><span>Growth-minded</span></div>
+      </div></div>
+    </section>
+
+    <section id="businesses"><div class="container">
+      <div class="section-head"><div class="section-label">What we do</div><h2>Business built around real needs.</h2><p>We are developing opportunities across sectors that matter to everyday life and long-term prosperity.</p></div>
+      <div class="business-grid">
+        <article class="business-card"><div class="business-image" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80')"></div><div class="business-body"><div class="icon">▣</div><h3>Technology</h3><p>Simple digital tools that help small businesses organize operations, understand performance, and grow with confidence.</p><a class="text-link" href="https://edrynate.github.io/biztrack-uganda">Explore BizTrack Uganda ↗</a></div></article>
+        <article class="business-card"><div class="business-image" style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80')"></div><div class="business-body"><div class="icon">♧</div><h3>Agriculture</h3><p>Supporting productive farming, value addition, and opportunities that connect agricultural work with markets.</p><a class="text-link" href="#contact">Discuss a partnership ↗</a></div></article>
+        <article class="business-card"><div class="business-image" style="background-image:url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80')"></div><div class="business-body"><div class="icon">♡</div><h3>Healthcare</h3><p>Exploring responsible, people-centred ideas that can contribute to healthier communities and better access to solutions.</p><a class="text-link" href="#contact">Work with us ↗</a></div></article>
+        <article class="business-card"><div class="business-image" style="background-image:url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80')"></div><div class="business-body"><div class="icon">◇</div><h3>Food & Consumer Goods</h3><p>Building around useful everyday products, quality, customer service, and opportunities for value-added goods.</p><a class="text-link" href="#contact">Explore opportunities ↗</a></div></article>
+      </div>
+    </div></section>
+
+    <section class="about" id="about"><div class="container about-grid">
+      <div class="about-visual" role="img" aria-label="Professionals collaborating on business ideas"><div class="stat-card"><strong>Purpose-led</strong><span>Practical ideas. Responsible growth. Lasting value.</span></div></div>
+      <div class="about-copy"><div class="section-label">About Edrynate</div><h2>A forward-looking company with a practical mindset.</h2><p>Edrynate Company Limited aims to build useful businesses and services that respond to real customer needs. We believe sustainable growth comes from listening carefully, delivering quality, and improving continuously.</p><p>Our approach is grounded in innovation, integrity, collaboration, and long-term value for the communities we serve.</p>
+        <ul class="check-list"><li>Solutions shaped around customer needs</li><li>Commitment to quality and transparency</li><li>Partnerships that create shared value</li></ul>
+        <a class="btn btn-primary" href="#contact">Start a conversation →</a>
+      </div>
+    </div></section>
+
+    <section id="impact"><div class="container">
+      <div class="section-head"><div class="section-label">Our impact</div><h2>Progress that reaches beyond business.</h2><p>We want our work to create practical value for individuals, businesses, and communities.</p></div>
+      <div class="impact-grid">
+        <div class="impact-item"><div class="icon">♧</div><h3>Stronger livelihoods</h3><p>Help create opportunities for farmers, entrepreneurs, and local businesses.</p></div>
+        <div class="impact-item"><div class="icon">▣</div><h3>Digital progress</h3><p>Make useful technology more accessible to growing enterprises.</p></div>
+        <div class="impact-item"><div class="icon">♡</div><h3>Healthier communities</h3><p>Explore responsible ideas that support wellbeing and service quality.</p></div>
+        <div class="impact-item"><div class="icon">✳</div><h3>Sustainable growth</h3><p>Build with care for people, resources, and the future.</p></div>
+      </div>
+    </div></section>
+
+    <section class="values"><div class="container">
+      <div class="section-head"><div class="section-label">What guides us</div><h2>Our values shape every decision.</h2><p>These principles are the foundation for how we work, serve, and build partnerships.</p></div>
+      <div class="values-grid">
+        <div class="value"><strong>Integrity</strong><span>Do what is right, even when it is difficult.</span></div>
+        <div class="value"><strong>Innovation</strong><span>Keep learning and finding better ways.</span></div>
+        <div class="value"><strong>Excellence</strong><span>Take pride in quality and follow-through.</span></div>
+        <div class="value"><strong>Community</strong><span>Grow through respect and collaboration.</span></div>
+        <div class="value"><strong>Sustainability</strong><span>Think long-term and act responsibly.</span></div>
+      </div>
+    </div></section>
+
+    <section class="cta" id="contact"><div class="container cta-inner">
+      <div><div class="section-label">Let's connect</div><h2>Have an idea or opportunity?</h2><p>Whether you are a customer, potential partner, supplier, or community organization, we welcome a conversation about creating value together.</p></div>
+      <a class="btn btn-primary" href="mailto:hello@edrynate.com?subject=Enquiry%20for%20Edrynate%20Company%20Limited">Contact Edrynate ↗</a>
+    </div></section>
+  </main>
+
+  <footer><div class="container">
+    <div class="footer-grid">
+      <div><a class="brand" href="#home"><span class="brand-mark">✦</span><span>Edrynate<small>Company Limited</small></span></a><p>Practical solutions, responsible innovation, and a better future for the people and communities we serve.</p></div>
+      <div><h4>Explore</h4><div class="footer-links"><a href="#about">About us</a><a href="#businesses">Our businesses</a><a href="#impact">Our impact</a></div></div>
+      <div><h4>Our work</h4><div class="footer-links"><a href="https://edrynate.github.io/biztrack-uganda">BizTrack Uganda</a><a href="https://edrynate.github.io/sokolink-africa">SokoLink Africa</a><a href="#contact">Partnerships</a></div></div>
+      <div><h4>Get in touch</h4><div class="footer-links"><a href="mailto:hello@edrynate.com">hello@edrynate.com</a><a href="#contact">Business enquiries</a><span>Uganda · Africa</span></div></div>
+    </div>
+    <div class="copyright"><span>© <span id="year"></span> Edrynate Company Limited. All rights reserved.</span><span>Built for growth. Designed for people.</span></div>
+  </div></footer>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? '×' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
